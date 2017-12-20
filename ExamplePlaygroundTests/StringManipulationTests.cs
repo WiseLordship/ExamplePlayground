@@ -21,5 +21,22 @@ namespace ExamplePlaygroundTests
             var result = StringManipulation.ReverseString(input);
             result.Should().Be(expected);
         }
+
+        [Theory]
+        [InlineData("", "")]
+        [InlineData(null, null)]
+        [InlineData("a", "a")]
+        [InlineData("aa", "a")]
+        [InlineData("ba", "ba")]
+        [InlineData("caba", "caba")]
+        [InlineData("faaad", "fad")]
+        [InlineData("AAAA BBBB", "A B")]
+        [InlineData("AaaAaA BbBbbBbbbBBb", "AaAaA BbBbBbBb")]
+        [InlineData("ABABAB BABABABA", "ABABAB BABABABA")]
+        public void RemoveDuplicateCharsTests(string input, string expected)
+        {
+            var result = StringManipulation.RemoveDuplicateChars(input);
+            result.Should().Be(expected);
+        }
     }
 }
