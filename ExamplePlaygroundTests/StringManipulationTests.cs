@@ -38,5 +38,22 @@ namespace ExamplePlaygroundTests
             var result = StringManipulation.RemoveDuplicateChars(input);
             result.Should().Be(expected);
         }
+
+
+        [Theory]
+        [InlineData("", "")]
+        [InlineData(null, null)]
+        [InlineData("a", "a")]
+        [InlineData("aa", "")]
+        [InlineData("aba", "b")]
+        [InlineData("caba", "c")]
+        [InlineData("faaad", "f")]
+        [InlineData("ABCDABCDABCDABCDE", "E")] //error
+        [InlineData("ABCDABCDABCDABCDEFGHIJKLMFNOEP", "G")] //error
+        public void FindFirstNonDuplicateCharTests(string input, string expected)
+        {
+            var result = StringManipulation.FindFirstNonDuplicateChar(input);
+            result.Should().Be(expected);
+        }        
     }
 }
