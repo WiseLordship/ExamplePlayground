@@ -1,8 +1,8 @@
 ﻿namespace ExamplePlayground
 {
-    public static class ArrayManipulation
+    public static class SortArrayLowToHigh
     {
-        public static int[] StortArrayLowHigh(int[] input)
+        public static int[] Sort(int[] input)
         {
             if (input == null) { return null; }
             if (input.Length == 1) { return input; }
